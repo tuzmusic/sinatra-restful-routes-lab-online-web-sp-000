@@ -5,6 +5,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/recipes' do
+    @recipes = Recipe.all
     # displays the list of recipes
     # with links to each recipe's show page
     erb :index
@@ -32,7 +33,19 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/recipes' do
-    
+    # creates a new recipe
+    # and shows the new recipe
+  end
+
+  get '/recipes/:id/edit' do
+    # shows the current recipe
+    # and shows a form to edit a recipe
+    erb :edit
+  end
+
+  patch '/recipes/:id' do
+    # updates the recipe object
+    # and shows the recipe
   end
 
 end
