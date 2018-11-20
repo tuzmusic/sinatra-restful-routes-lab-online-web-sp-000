@@ -11,13 +11,11 @@ class ApplicationController < Sinatra::Base
 
   get '/recipes/:id' do
     @recipe = Recipe.find(params[:id])
-    # displays the recipe
-    # with a button (in its own form) to delete the recipe
     erb :show
   end
 
   get '/recipes/:id/edit' do
-    # displays the recipe and an edit form
+    @recipe = Recipe.find(params[:id])
     erb :edit
   end
 
