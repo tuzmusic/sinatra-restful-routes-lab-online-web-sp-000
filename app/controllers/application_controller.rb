@@ -23,6 +23,16 @@ class ApplicationController < Sinatra::Base
 
   patch '/recipes/:id' do
     # edits the recipe
+    # and shows the edited recipe
+  end
+
+  get '/recipes/new' do
+    # presents a form for creating a new recipe
+    erb :create
+  end
+
+  post '/recipes' do
+    
   end
 
 end
