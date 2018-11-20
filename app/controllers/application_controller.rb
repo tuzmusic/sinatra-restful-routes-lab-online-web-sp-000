@@ -6,12 +6,11 @@ class ApplicationController < Sinatra::Base
 
   get '/recipes' do
     @recipes = Recipe.all
-    # displays the list of recipes
-    # with links to each recipe's show page
     erb :index
   end
 
   get '/recipes/:id' do
+    @recipe = Recipe.find(params[:id])
     # displays the recipe
     # with a button (in its own form) to delete the recipe
     erb :show
