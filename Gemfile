@@ -21,7 +21,7 @@ group :test do
 end
 
 group :development do
-  gem 'rspec'
+  # gem 'rspec'
   gem 'pry'
   gem 'pry-nav'
   gem 'capybara'
