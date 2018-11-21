@@ -40,6 +40,7 @@ class ApplicationController < Sinatra::Base
 
   post "/recipes/#{:id}/delete" do
     Recipes.find(:id).destroy
+    redirect '/recipes'
   end
 
   get '/recipes/:id/edit' do
