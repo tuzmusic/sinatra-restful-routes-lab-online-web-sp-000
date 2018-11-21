@@ -36,8 +36,6 @@ class ApplicationController < Sinatra::Base
     recipe.save
 
     redirect "/recipes/#{:id}"
-    # edits the recipe
-    # and shows the edited recipe
   end
 
   get '/recipes/:id/edit' do
