@@ -9,6 +9,15 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  get '/recipes/new' do
+    erb :create
+  end
+
+  post '/recipes' do
+    # creates a new recipe
+    # and shows the new recipe
+  end
+
   get '/recipes/:id' do
     @recipe = Recipe.find(params[:id])
     erb :show
@@ -24,25 +33,8 @@ class ApplicationController < Sinatra::Base
     # and shows the edited recipe
   end
 
-  get '/recipes/new' do
-    # presents a form for creating a new recipe
-    erb :create
-  end
-
-  post '/recipes' do
-    # creates a new recipe
-    # and shows the new recipe
-  end
-
   get '/recipes/:id/edit' do
-    # shows the current recipe
-    # and shows a form to edit a recipe
     erb :edit
-  end
-
-  patch '/recipes/:id' do
-    # updates the recipe object
-    # and shows the recipe
   end
 
 end
