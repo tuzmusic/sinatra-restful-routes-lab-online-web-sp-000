@@ -36,8 +36,13 @@ class ApplicationController < Sinatra::Base
     recipe.save
 
     redirect "/recipes/#{:id}"
-    # edits the recipe
-    # and shows the edited recipe
+  end
+
+  delete '/recipes/:id' do
+    # binding.pry
+    recipe = Recipe.find(params[:id])
+    recipe.delete
+    redirect '/recipes'
   end
 
   get '/recipes/:id/edit' do
