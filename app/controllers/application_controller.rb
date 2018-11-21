@@ -38,6 +38,10 @@ class ApplicationController < Sinatra::Base
     redirect "/recipes/#{:id}"
   end
 
+  post "/recipes/#{:id}/delete" do
+    
+  end
+
   get '/recipes/:id/edit' do
     erb :edit
   end
